@@ -6,7 +6,7 @@
 #define FullStep 4
 #define HalfStep 8
 
-AccelStepper myStepper(FullStep, 26, 25, 4, 15);
+AccelStepper myStepper(FullStep, 26, 25, 4, 21);
 AccelStepper myStepper2(FullStep, 13, 12, 27, 33);
 
 
