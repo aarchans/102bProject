@@ -6,7 +6,7 @@
 #define FullStep 4
 #define HalfStep 8
 
-AccelStepper myStepper(FullStep, 26, 25, 4, 15);
+AccelStepper myStepper(FullStep, 26, 25, 4, 21);
 AccelStepper myStepper2(FullStep, 13, 12, 27, 33);
 
 
@@ -40,11 +40,11 @@ void setup() {
   esp_now_register_recv_cb(OnDataRecv);
   
   myStepper.setMaxSpeed(1000.0);
-  myStepper.setAcceleration(50.0);
-  myStepper.setSpeed(200);
+  myStepper.setAcceleration(200.0);
+  myStepper.setSpeed(800);
   myStepper2.setMaxSpeed(1000.0);
-  myStepper2.setAcceleration(50.0);
-  myStepper2.setSpeed(200);
+  myStepper2.setAcceleration(200.0);
+  myStepper2.setSpeed(800);
 
 }
 
@@ -52,6 +52,6 @@ void loop() {
   // put your main code here, to run repeatedly:
   myStepper.moveTo(myData.setMotorOne);
   myStepper2.moveTo(myData.setMotorTwo);
-  myStepper.run();
-  myStepper2.run();
+  myStepper.runToPosition();
+  myStepper2.runToPosition();
 }
