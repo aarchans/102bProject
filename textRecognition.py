@@ -8,7 +8,7 @@ import time
 # esp32 = Serial(port = port_num, baudrate = 115200)
 
 filename = "Test.png"
-
+flag = 0
 # Starting to analyse the image and do OCR on it to pull out strings of words
 img1 = np.array(Image.open(filename))
 text = pytesseract.image_to_string(img1)
